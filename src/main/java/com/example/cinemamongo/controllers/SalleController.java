@@ -1,6 +1,9 @@
 package com.example.cinemamongo.controllers;
 
+import com.example.cinemamongo.models.Cinema;
+import com.example.cinemamongo.models.Film;
 import com.example.cinemamongo.models.Salle;
+import com.example.cinemamongo.models.Seance;
 import com.example.cinemamongo.repositories.SalleRepository;
 import com.example.cinemamongo.services.SalleService;
 import org.springframework.web.bind.annotation.*;
@@ -53,4 +56,18 @@ public class SalleController {
         return this.salleService.patchNombreDePlaces(id, nombreDePlaces);
     }
 
+    @GetMapping("{id}/seance")
+    public List<Seance> findSeancesBySalleId(@PathVariable String id) {
+        return this.salleService.findSeancesBySalleId(id);
+    }
+
+    @GetMapping("{id}/cinema")
+    public Cinema findCinemaBySalleId(String id) {
+        return this.salleService.findCinemaBySalleId(id);
+    }
+
+    @GetMapping("{id}/film")
+    public List<Film> findfilmsBySalleId(@PathVariable String id) {
+        return this.salleService.findFilmsBySalleId(id);
+    }
 }

@@ -25,9 +25,7 @@ public class Seance {
     @DBRef
     private Film film;
 
-    @Field("salle")
-    @DBRef
-    private Salle salle;
+
 
 
 

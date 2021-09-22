@@ -19,4 +19,13 @@ public class Salle {
 
     private String numeroDeSalle;
     private Integer nombreDePlaces;
+
+    @Field("seance")
+    @DBRef
+    private List<Seance> seance;
+
+    @Field("cinema")
+    @DBRef
+    private Cinema cinema;
+
 }
